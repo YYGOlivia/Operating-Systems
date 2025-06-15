@@ -1,0 +1,60 @@
+# Doxyfile configuration file
+
+# Project information
+
+PROJECT_NAME = "Projet OS"
+PROJECT_NUMBER = "1.0"
+OUTPUT_DIRECTORY = ./documentation
+INPUT = ./ # Répertoire contenant les fichiers source
+RECURSIVE = YES
+
+# Include directories (si nécessaire)
+
+# INCLUDE_PATH =
+
+# File patterns
+
+FILE*PATTERNS = *.c \_.h
+
+# Exclure certains fichiers ou répertoires
+
+# EXCLUDE =
+
+# Extraction de tous les membres, y compris privés et statiques
+
+EXTRACT_ALL = YES
+EXTRACT_PRIVATE = YES
+EXTRACT_STATIC = YES
+
+# Gestion des commentaires
+
+JAVADOC_AUTOBRIEF = YES
+QT_AUTOBRIEF = YES
+MULTILINE_CPP_IS_BRIEF = YES
+
+# Format des commentaires
+
+ABBREVIATE_BRIEF = "The $name class" \
+ "The $name widget" \
+ "The $name file" \
+ is \
+ provides \
+ specifies \
+ contains \
+ represents \
+ a \
+ an \
+ the
+
+# Génération de la documentation HTML
+
+GENERATE_HTML = YES
+HTML_OUTPUT = html
+
+# Génération des diagrammes de classes et de collaborations (si nécessaire)
+
+# HAVE_DOT = YES
+
+# CLASS_DIAGRAMS = YES
+
+# COLLABORATION_GRAPH = YES

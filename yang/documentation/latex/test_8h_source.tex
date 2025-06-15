@@ -1,0 +1,70 @@
+\doxysection{test.\+h}
+\hypertarget{test_8h_source}{}\label{test_8h_source}\mbox{\hyperlink{test_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ TEST\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ TEST\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ PARTITION\_SIZE\ 1024\ *\ 1024\ \ }}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ MAX\_LENGTH\ 1024}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ MAX\_PARAMS\ 20}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ BLOCK\_SIZE\ 512\ }}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ TOTAL\_BLOCKS\ (PARTITION\_SIZE\ /\ BLOCK\_SIZE)\ }}
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ block\_usage[\mbox{\hyperlink{test_8h_a5559d5e7ba501e9762af5f203035df14}{TOTAL\_BLOCKS}}];\ }
+\DoxyCodeLine{00023\ \}\ \mbox{\hyperlink{struct_partition_status}{PartitionStatus}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_partition_status}{PartitionStatus}}\ \mbox{\hyperlink{test_8h_a2e5caaafef698afe485f1bad33068537}{g\_partitionStatus}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfile_a93164d6663f12c00df3d65b7b0990cc2}{name}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfile_a83a90719edeee627bd6fefe5f8af58ce}{size}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfile_a9dc58569ab9380290caf27f8926d3a09}{current\_position}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfile_a9c9154337f0c0aa90f11e5c60e93efdd}{data}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfile_a255b2a24c4c4eaa5ea056ad808d8bf5b}{block\_start}};\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfile_a4c58c5614730b7b26924c1d090433f05}{blocks\_count}};\ }
+\DoxyCodeLine{00040\ \}\ \mbox{\hyperlink{structfile}{file}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_a0c66137f039a7b0e4c171923b818fd8b}{clearInputBuffer}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_a4e2dfdd65ef94dc6698c582867a4aedd}{displayCurrentDirectory}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \mbox{\hyperlink{struct_partition_status}{PartitionStatus}}*\ \mbox{\hyperlink{test_8h_a075156f1ada5840bc1aab2a9c0d57449}{initializePartitionStatus}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_af9c151fc0a48affa0e0a7ad5ec122190}{visualizePartitionStatus}}(\mbox{\hyperlink{struct_partition_status}{PartitionStatus}}*\ status);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_a96295dc1f9c47fe4ae9d23294d66a020}{allocateBlocks}}(\mbox{\hyperlink{structfile}{file}}*\ f,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_a13dc4a937e6247d0e571d1488b043baa}{freeBlocks}}(\mbox{\hyperlink{structfile}{file}}*\ f);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_a1831756a0838d0a77ed52c795d9d9681}{myFormat}}(\textcolor{keywordtype}{char}*\ partitionName);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \mbox{\hyperlink{structfile}{file}}*\ \mbox{\hyperlink{test_8h_a5e9495aa166c5ded170e57d757c20ae6}{myOpen}}(\textcolor{keywordtype}{char}*\ fileName);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_a4f504d143f79215f1ef10e903f2a0b5e}{myWrite}}(\mbox{\hyperlink{structfile}{file}}*\ f,\ \textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{int}\ nBytes);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_a6ec851b8448ad96e0a91150e4e3310b3}{myRead}}(\mbox{\hyperlink{structfile}{file}}*\ f,\ \textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{int}\ nBytes);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_ab5086668eab8d8143f6eac77be0d0412}{mySeek}}(\mbox{\hyperlink{structfile}{file}}*\ f,\ \textcolor{keywordtype}{int}\ offset,\ \textcolor{keywordtype}{int}\ base);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_a84d978054de8c585d34f756146fe1c2c}{getFileSize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfile}{file}}*\ f);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00129\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_a1886b08b0c9c8a7bffd10b8e49f3e548}{myEcho}}(\textcolor{keywordtype}{char}\ **params);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_a9cb072aa0b757355c7f5a3bd66bf33ba}{myCd}}(\textcolor{keywordtype}{char}\ **params);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00144\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_abe5664c99d404a8f4f7326855fc7402a}{myRename}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ oldName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ newName);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00152\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_a4ae3e14877e7f476cc1291f5ed376e62}{myMove}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sourceName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ destName);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00158\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8h_adc6482580b5cfba145998ef7c9d93fb8}{myDelete}}(\mbox{\hyperlink{structfile}{file}}*\ f);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00166\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_a998e2e144e3d76b891f04923eb5876e6}{myCopy}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sourceName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ destName);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00173\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8h_aabcb4cda5ce447734e2c8cb2576fdb0a}{myExit}}(\textcolor{keywordtype}{char}\ **params);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TEST\_H}}
+
+\end{DoxyCode}

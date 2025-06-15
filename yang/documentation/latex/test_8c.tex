@@ -1,0 +1,447 @@
+\doxysection{test.\+c File Reference}
+\hypertarget{test_8c}{}\label{test_8c}\index{test.c@{test.c}}
+
+
+Implémentation des fonctions de test pour le système de fichiers.  
+
+
+{\ttfamily \#include "{}test.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test_8c_a22d7c3e857afba4903a76181f91ea9fb}{clear\+Input\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Efface le tampon d\textquotesingle{}entrée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8c_a0db409b1f8f815001a1d819b5ca89a3c}{display\+Current\+Directory}} ()
+\begin{DoxyCompactList}\small\item\em Affiche le répertoire actuel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_partition_status}{Partition\+Status}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{test_8c_ae5c4867cb067d0cb710801dcabaff5c8}{initialize\+Partition\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Initialise le statut de la partition à tous libres (\textquotesingle{}0\textquotesingle{}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8c_af9c151fc0a48affa0e0a7ad5ec122190}{visualize\+Partition\+Status}} (\mbox{\hyperlink{struct_partition_status}{Partition\+Status}} \texorpdfstring{$\ast$}{*}status)
+\begin{DoxyCompactList}\small\item\em Visualise le statut de la partition. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_ac275ec425beaf2962dbb0271a1750602}{find\+Free\+Blocks}} (int blocks\+Needed)
+\begin{DoxyCompactList}\small\item\em Trouve des blocs libres consécutifs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_a96295dc1f9c47fe4ae9d23294d66a020}{allocate\+Blocks}} (\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}f, int size)
+\begin{DoxyCompactList}\small\item\em Alloue des blocs pour le fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8c_a13dc4a937e6247d0e571d1488b043baa}{free\+Blocks}} (\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Libère les blocs alloués au fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_a84d978054de8c585d34f756146fe1c2c}{get\+File\+Size}} (const \mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Obtient la taille du fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_a1831756a0838d0a77ed52c795d9d9681}{my\+Format}} (char \texorpdfstring{$\ast$}{*}partition\+Name)
+\begin{DoxyCompactList}\small\item\em Formatte la partition. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{test_8c_a5e9495aa166c5ded170e57d757c20ae6}{my\+Open}} (char \texorpdfstring{$\ast$}{*}file\+Name)
+\begin{DoxyCompactList}\small\item\em Ouvre un fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_a4f504d143f79215f1ef10e903f2a0b5e}{my\+Write}} (\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}f, void \texorpdfstring{$\ast$}{*}buffer, int n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Écrit dans un fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_a6ec851b8448ad96e0a91150e4e3310b3}{my\+Read}} (\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}f, void \texorpdfstring{$\ast$}{*}buffer, int n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Lit depuis un fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8c_ab5086668eab8d8143f6eac77be0d0412}{my\+Seek}} (\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}f, int offset, int base)
+\begin{DoxyCompactList}\small\item\em Déplace le curseur de lecture/écriture dans le fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8c_a086236992bbd0f3f57317b51a446e96e}{my\+Echo}} (char \texorpdfstring{$\ast$}{*}params\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Affiche un message. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_a9cb072aa0b757355c7f5a3bd66bf33ba}{my\+Cd}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}params)
+\begin{DoxyCompactList}\small\item\em Change le répertoire de travail courant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8c_adc6482580b5cfba145998ef7c9d93fb8}{my\+Delete}} (\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Supprime un fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_a998e2e144e3d76b891f04923eb5876e6}{my\+Copy}} (const char \texorpdfstring{$\ast$}{*}source\+Name, const char \texorpdfstring{$\ast$}{*}dest\+Name)
+\begin{DoxyCompactList}\small\item\em Copie un fichier source dans un fichier destination. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_abe5664c99d404a8f4f7326855fc7402a}{my\+Rename}} (const char \texorpdfstring{$\ast$}{*}old\+Name, const char \texorpdfstring{$\ast$}{*}new\+Name)
+\begin{DoxyCompactList}\small\item\em Renomme un fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_a4ae3e14877e7f476cc1291f5ed376e62}{my\+Move}} (const char \texorpdfstring{$\ast$}{*}source\+Name, const char \texorpdfstring{$\ast$}{*}dest\+Name)
+\begin{DoxyCompactList}\small\item\em Déplace un fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test_8c_aabcb4cda5ce447734e2c8cb2576fdb0a}{my\+Exit}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}params)
+\begin{DoxyCompactList}\small\item\em Termine l\textquotesingle{}exécution du programme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_partition_status}{Partition\+Status}} \mbox{\hyperlink{test_8c_a2e5caaafef698afe485f1bad33068537}{g\+\_\+partition\+Status}}
+\begin{DoxyCompactList}\small\item\em Variable globale représentant le statut de la partition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implémentation des fonctions de test pour le système de fichiers. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test_8c_a96295dc1f9c47fe4ae9d23294d66a020}\label{test_8c_a96295dc1f9c47fe4ae9d23294d66a020} 
+\index{test.c@{test.c}!allocateBlocks@{allocateBlocks}}
+\index{allocateBlocks@{allocateBlocks}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{allocateBlocks()}{allocateBlocks()}}
+{\footnotesize\ttfamily int allocate\+Blocks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}}]{f,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Alloue des blocs pour le fichier. 
+
+Alloue des blocs de disque pour un fichier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier. \\
+\hline
+{\em size} & La taille du fichier à allouer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le nombre de blocs alloués ou -\/1 s\textquotesingle{}il n\textquotesingle{}y a pas assez d\textquotesingle{}espace. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_a22d7c3e857afba4903a76181f91ea9fb}\label{test_8c_a22d7c3e857afba4903a76181f91ea9fb} 
+\index{test.c@{test.c}!clearInputBuffer@{clearInputBuffer}}
+\index{clearInputBuffer@{clearInputBuffer}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{clearInputBuffer()}{clearInputBuffer()}}
+{\footnotesize\ttfamily void clear\+Input\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Efface le tampon d\textquotesingle{}entrée. 
+
+Vide le tampon d\textquotesingle{}entrée. \Hypertarget{test_8c_a0db409b1f8f815001a1d819b5ca89a3c}\label{test_8c_a0db409b1f8f815001a1d819b5ca89a3c} 
+\index{test.c@{test.c}!displayCurrentDirectory@{displayCurrentDirectory}}
+\index{displayCurrentDirectory@{displayCurrentDirectory}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{displayCurrentDirectory()}{displayCurrentDirectory()}}
+{\footnotesize\ttfamily void display\+Current\+Directory (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Affiche le répertoire actuel. 
+
+Affiche le répertoire courant. \Hypertarget{test_8c_ac275ec425beaf2962dbb0271a1750602}\label{test_8c_ac275ec425beaf2962dbb0271a1750602} 
+\index{test.c@{test.c}!findFreeBlocks@{findFreeBlocks}}
+\index{findFreeBlocks@{findFreeBlocks}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{findFreeBlocks()}{findFreeBlocks()}}
+{\footnotesize\ttfamily int find\+Free\+Blocks (\begin{DoxyParamCaption}\item[{int}]{blocks\+Needed }\end{DoxyParamCaption})}
+
+
+
+Trouve des blocs libres consécutifs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em blocks\+Needed} & Le nombre de blocs libres nécessaires. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}index du premier bloc libre trouvé, -\/1 s\textquotesingle{}il n\textquotesingle{}y en a pas assez. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_a13dc4a937e6247d0e571d1488b043baa}\label{test_8c_a13dc4a937e6247d0e571d1488b043baa} 
+\index{test.c@{test.c}!freeBlocks@{freeBlocks}}
+\index{freeBlocks@{freeBlocks}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{freeBlocks()}{freeBlocks()}}
+{\footnotesize\ttfamily void free\+Blocks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}}]{f }\end{DoxyParamCaption})}
+
+
+
+Libère les blocs alloués au fichier. 
+
+Libère les blocs de disque alloués pour un fichier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{test_8c_a84d978054de8c585d34f756146fe1c2c}\label{test_8c_a84d978054de8c585d34f756146fe1c2c} 
+\index{test.c@{test.c}!getFileSize@{getFileSize}}
+\index{getFileSize@{getFileSize}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{getFileSize()}{getFileSize()}}
+{\footnotesize\ttfamily int get\+File\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}}]{f }\end{DoxyParamCaption})}
+
+
+
+Obtient la taille du fichier. 
+
+Obtient la taille d\textquotesingle{}un fichier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La taille du fichier ou -\/1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_ae5c4867cb067d0cb710801dcabaff5c8}\label{test_8c_ae5c4867cb067d0cb710801dcabaff5c8} 
+\index{test.c@{test.c}!initializePartitionStatus@{initializePartitionStatus}}
+\index{initializePartitionStatus@{initializePartitionStatus}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{initializePartitionStatus()}{initializePartitionStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_partition_status}{Partition\+Status}} \texorpdfstring{$\ast$}{*} initialize\+Partition\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialise le statut de la partition à tous libres (\textquotesingle{}0\textquotesingle{}). 
+
+Initialise le statut de la partition.
+
+\begin{DoxyReturn}{Returns}
+Un pointeur vers le statut de partition initialisé. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_a9cb072aa0b757355c7f5a3bd66bf33ba}\label{test_8c_a9cb072aa0b757355c7f5a3bd66bf33ba} 
+\index{test.c@{test.c}!myCd@{myCd}}
+\index{myCd@{myCd}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myCd()}{myCd()}}
+{\footnotesize\ttfamily int my\+Cd (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{params }\end{DoxyParamCaption})}
+
+
+
+Change le répertoire de travail courant. 
+
+Change le répertoire courant.
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Les paramètres passés à la commande cd. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 en cas de succès, -\/1 en cas d\textquotesingle{}échec. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_a998e2e144e3d76b891f04923eb5876e6}\label{test_8c_a998e2e144e3d76b891f04923eb5876e6} 
+\index{test.c@{test.c}!myCopy@{myCopy}}
+\index{myCopy@{myCopy}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myCopy()}{myCopy()}}
+{\footnotesize\ttfamily int my\+Copy (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{source\+Name,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{dest\+Name }\end{DoxyParamCaption})}
+
+
+
+Copie un fichier source dans un fichier destination. 
+
+Copie un fichier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Name} & Le nom du fichier source. \\
+\hline
+{\em dest\+Name} & Le nom du fichier destination. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 en cas de succès, -\/1 en cas d\textquotesingle{}échec. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_adc6482580b5cfba145998ef7c9d93fb8}\label{test_8c_adc6482580b5cfba145998ef7c9d93fb8} 
+\index{test.c@{test.c}!myDelete@{myDelete}}
+\index{myDelete@{myDelete}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myDelete()}{myDelete()}}
+{\footnotesize\ttfamily void my\+Delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}}]{f }\end{DoxyParamCaption})}
+
+
+
+Supprime un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier à supprimer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{test_8c_a086236992bbd0f3f57317b51a446e96e}\label{test_8c_a086236992bbd0f3f57317b51a446e96e} 
+\index{test.c@{test.c}!myEcho@{myEcho}}
+\index{myEcho@{myEcho}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myEcho()}{myEcho()}}
+{\footnotesize\ttfamily void my\+Echo (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{params\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Affiche un message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Les paramètres passés à la commande echo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{test_8c_aabcb4cda5ce447734e2c8cb2576fdb0a}\label{test_8c_aabcb4cda5ce447734e2c8cb2576fdb0a} 
+\index{test.c@{test.c}!myExit@{myExit}}
+\index{myExit@{myExit}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myExit()}{myExit()}}
+{\footnotesize\ttfamily int my\+Exit (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{params }\end{DoxyParamCaption})}
+
+
+
+Termine l\textquotesingle{}exécution du programme. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & Les paramètres passés à la commande exit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N/A 
+\end{DoxyReturn}
+\Hypertarget{test_8c_a1831756a0838d0a77ed52c795d9d9681}\label{test_8c_a1831756a0838d0a77ed52c795d9d9681} 
+\index{test.c@{test.c}!myFormat@{myFormat}}
+\index{myFormat@{myFormat}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myFormat()}{myFormat()}}
+{\footnotesize\ttfamily int my\+Format (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{partition\+Name }\end{DoxyParamCaption})}
+
+
+
+Formatte la partition. 
+
+Formatte une partition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em partition\+Name} & Le nom de la partition à formater. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 en cas de réussite, -\/1 en cas d\textquotesingle{}échec. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_a4ae3e14877e7f476cc1291f5ed376e62}\label{test_8c_a4ae3e14877e7f476cc1291f5ed376e62} 
+\index{test.c@{test.c}!myMove@{myMove}}
+\index{myMove@{myMove}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myMove()}{myMove()}}
+{\footnotesize\ttfamily int my\+Move (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{source\+Name,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{dest\+Name }\end{DoxyParamCaption})}
+
+
+
+Déplace un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Name} & Le nom du fichier source. \\
+\hline
+{\em dest\+Name} & Le nom du fichier destination. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 en cas de succès, -\/1 en cas d\textquotesingle{}échec. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_a5e9495aa166c5ded170e57d757c20ae6}\label{test_8c_a5e9495aa166c5ded170e57d757c20ae6} 
+\index{test.c@{test.c}!myOpen@{myOpen}}
+\index{myOpen@{myOpen}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myOpen()}{myOpen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*} my\+Open (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Ouvre un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Le nom du fichier à ouvrir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers la structure de fichier ou NULL en cas d\textquotesingle{}échec. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_a6ec851b8448ad96e0a91150e4e3310b3}\label{test_8c_a6ec851b8448ad96e0a91150e4e3310b3} 
+\index{test.c@{test.c}!myRead@{myRead}}
+\index{myRead@{myRead}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myRead()}{myRead()}}
+{\footnotesize\ttfamily int my\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}}]{f,  }\item[{void \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Lit depuis un fichier. 
+
+Lit des données depuis un fichier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier. \\
+\hline
+{\em buffer} & Le tampon où stocker les données lues. \\
+\hline
+{\em n\+Bytes} & Le nombre d\textquotesingle{}octets à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le nombre d\textquotesingle{}octets lus ou -\/1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_abe5664c99d404a8f4f7326855fc7402a}\label{test_8c_abe5664c99d404a8f4f7326855fc7402a} 
+\index{test.c@{test.c}!myRename@{myRename}}
+\index{myRename@{myRename}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myRename()}{myRename()}}
+{\footnotesize\ttfamily int my\+Rename (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{old\+Name,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{new\+Name }\end{DoxyParamCaption})}
+
+
+
+Renomme un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Name} & Le nom du fichier à renommer. \\
+\hline
+{\em new\+Name} & Le nouveau nom du fichier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 en cas de succès, -\/1 en cas d\textquotesingle{}échec. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_ab5086668eab8d8143f6eac77be0d0412}\label{test_8c_ab5086668eab8d8143f6eac77be0d0412} 
+\index{test.c@{test.c}!mySeek@{mySeek}}
+\index{mySeek@{mySeek}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{mySeek()}{mySeek()}}
+{\footnotesize\ttfamily void my\+Seek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}}]{f,  }\item[{int}]{offset,  }\item[{int}]{base }\end{DoxyParamCaption})}
+
+
+
+Déplace le curseur de lecture/écriture dans le fichier. 
+
+Déplace le curseur de lecture/écriture dans un fichier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier. \\
+\hline
+{\em offset} & Le décalage par rapport à la position de base. \\
+\hline
+{\em base} & La position de base à partir de laquelle effectuer le décalage. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{test_8c_a4f504d143f79215f1ef10e903f2a0b5e}\label{test_8c_a4f504d143f79215f1ef10e903f2a0b5e} 
+\index{test.c@{test.c}!myWrite@{myWrite}}
+\index{myWrite@{myWrite}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{myWrite()}{myWrite()}}
+{\footnotesize\ttfamily int my\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile}{file}} \texorpdfstring{$\ast$}{*}}]{f,  }\item[{void \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Écrit dans un fichier. 
+
+Écrit des données dans un fichier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Le pointeur vers la structure de fichier. \\
+\hline
+{\em buffer} & Le tampon contenant les données à écrire. \\
+\hline
+{\em n\+Bytes} & Le nombre d\textquotesingle{}octets à écrire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le nombre d\textquotesingle{}octets écrits ou -\/1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\Hypertarget{test_8c_af9c151fc0a48affa0e0a7ad5ec122190}\label{test_8c_af9c151fc0a48affa0e0a7ad5ec122190} 
+\index{test.c@{test.c}!visualizePartitionStatus@{visualizePartitionStatus}}
+\index{visualizePartitionStatus@{visualizePartitionStatus}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{visualizePartitionStatus()}{visualizePartitionStatus()}}
+{\footnotesize\ttfamily void visualize\+Partition\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_partition_status}{Partition\+Status}} \texorpdfstring{$\ast$}{*}}]{status }\end{DoxyParamCaption})}
+
+
+
+Visualise le statut de la partition. 
+
+Visualise le statut des blocs de la partition.
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & Le statut de la partition à visualiser. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{test_8c_a2e5caaafef698afe485f1bad33068537}\label{test_8c_a2e5caaafef698afe485f1bad33068537} 
+\index{test.c@{test.c}!g\_partitionStatus@{g\_partitionStatus}}
+\index{g\_partitionStatus@{g\_partitionStatus}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{g\_partitionStatus}{g\_partitionStatus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_partition_status}{Partition\+Status}} g\+\_\+partition\+Status}
+
+
+
+Variable globale représentant le statut de la partition. 
+
